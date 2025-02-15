@@ -235,14 +235,6 @@ nav ul li a:hover {
 }
 
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1rem 0;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -291,3 +283,84 @@ footer {
         margin: 0 auto 1rem;
     }
 }
+.footer {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.social-container h3 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.social-link {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link i {
+    font-size: 2rem;
+    color: #fff;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hover Animations */
+.social-link:hover {
+    transform: translateY(-5px);
+}
+
+.social-link:hover i {
+    transform: scale(1.2);
+    text-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+/* Individual Color Effects */
+.social-link:hover .fa-linkedin { color: #0077b5; }
+.social-link:hover .fa-github { color: #6cc644; }
+.social-link:hover .fa-envelope { color: #EA4335; }
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.social-link i {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Pop-in Animation on Load */
+.social-link {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: popIn 0.5s ease forwards;
+}
+
+@keyframes popIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered Animation Delays */
+.social-link:nth-child(1) { animation-delay: 0.2s; }
+.social-link:nth-child(2) { animation-delay: 0.4s; }
+.social-link:nth-child(3) { animation-delay: 0.6s; }
